@@ -8,8 +8,8 @@ public class MatrixCheck {
                 char sign = board[row][cell];
                 System.out.print(sign);
                 if (sign == 'X') {
-                    if (MatrixCheck.isRowWin(board, row) ||
-                            MatrixCheck.isCellWin(board, cell)) {
+                    if (MatrixCheck.isRowWin(board, row)
+                            || MatrixCheck.isCellWin(board, cell)) {
                         result = true;
                     }
                 }

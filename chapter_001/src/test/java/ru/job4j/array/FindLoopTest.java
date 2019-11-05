@@ -66,16 +66,4 @@ public class FindLoopTest {
         int expect = -1;
         assertThat(result, is(expect));
     }
-
-    @Test
-    public void whenArrIndexOutOfBound() {
-        FindLoop find = new FindLoop();
-        int[] input = new int[] {5, 2, 10, 2, 4};
-        int value = 5;
-        int start = 0;
-        int finish = 5;
-        int result = find.indexOf(input, value, start, finish);
-        int expect = -1;
-        assertThat(result, is(expect));
-    }
 }
