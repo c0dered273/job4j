@@ -3,18 +3,13 @@ package ru.job4j.array;
 public class MatrixCheck {
     public static boolean isWin(char[][] board) {
         boolean result = false;
-        for (int row = 0; row < board.length; row++) {
-            for (int cell = 0; cell < board.length; cell++) {
-                char sign = board[row][cell];
-                System.out.print(sign);
-                if (sign == 'X') {
-                    if (MatrixCheck.isRowWin(board, row)
-                            || MatrixCheck.isCellWin(board, cell)) {
-                        result = true;
-                    }
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][i] == 'X') {
+                result = isRowWin(board, i) || isColumnWin(board, i);
+                if (result) {
+                    break;
                 }
             }
-            System.out.println();
         }
         return result;
     }
@@ -30,10 +25,10 @@ public class MatrixCheck {
         return result;
     }
 
-    private static boolean isCellWin(char[][] board, int cell) {
+    private static boolean isColumnWin(char[][] board, int column) {
         boolean result = true;
         for (int i = 0; i < board.length; i++) {
-            if (board[i][cell] != 'X') {
+            if (board[i][column] != 'X') {
                 result = false;
                 break;
             }
