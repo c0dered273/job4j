@@ -3,12 +3,9 @@ package ru.job4j.array;
 public class MatrixCheck {
     public static boolean isWin(char[][] board) {
         boolean result = false;
-        for (int i = 0; i < board.length; i++) {
+        for (int i = 0; i < board.length && !result; i++) {
             if (board[i][i] == 'X') {
                 result = isRowWin(board, i) || isColumnWin(board, i);
-                if (result) {
-                    break;
-                }
             }
         }
         return result;
