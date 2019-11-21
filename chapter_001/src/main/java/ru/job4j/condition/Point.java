@@ -11,12 +11,12 @@ public class Point {
     }
 
     public double distance(Point distPoint) {
-        return Math.sqrt(Math.pow((distPoint.x - this.x), 2) + Math.pow((distPoint.x - this.y), 2));
+        return Math.sqrt(Math.pow((distPoint.x - this.x), 2) + Math.pow((distPoint.y - this.y), 2));
     }
 
     public static void main(String[] args) {
-        Point a = new Point(0, 0);
-        Point b = new Point(0, 2);
+        Point a = new Point(2, 2);
+        Point b = new Point(10, 2);
         double dist = a.distance(b);
         System.out.println(dist);
     }
