@@ -7,11 +7,9 @@ public class PointTest {
 
     @Test
     public void distance() {
-        int x1 = 35;
-        int y1 = 71;
-        int x2 = 2;
-        int y2 = 2;
-        double actual = Point.distance(x1, y1, x2, y2);
+        Point first = new Point(35, 71);
+        Point second = new Point(2, 2);
+        double actual = first.distance(second);
         Assert.assertEquals(76.48, actual, 0.01);
     }
 }
