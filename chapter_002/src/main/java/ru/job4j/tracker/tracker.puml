@@ -1,0 +1,55 @@
+@startuml
+
+StartUI <-- Tracker
+StartUI <-- Input
+StartUI <-- MenuTracker
+Tracker *-- Item
+
+MenuTracker <-- Action
+
+Action <|-- CreateItemAction
+Action <|-- UpdateItemAction
+Action <|-- DeleteItemAction
+
+class Item {
+    -id : String
+    -name : String
+    -desc : String
+    -created : long
+    -comments : String[]
+}
+
+class Tracker {
+    -items : Item[]
+
+    +add(Item item) : Item
+    +update(Item item) : void
+    +findById(String id) : Item
+    +delete(String id) : void
+    +getAll() : Item[]
+}
+
+class Input {
+    +ask(String question) : String
+    +print(String data) : void
+}
+
+class StartUI {
+    +init() : void
+}
+
+class MenuTracker {
+    -actions : Action[]
+
+    +select(int index) : Action
+}
+
+class Action {
+    +execute(Tracker tracker, Input input) : void
+}
+
+class CreateItemAction
+class UpdateItemAction
+class DeleteItemAction
+
+@enduml
