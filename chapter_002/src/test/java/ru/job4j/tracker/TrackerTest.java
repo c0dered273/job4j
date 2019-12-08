@@ -80,7 +80,8 @@ public class TrackerTest {
     public void findAllWithEmptyArray() {
         Tracker tracker = new Tracker();
         Item[] result = tracker.findAll();
-        assertThat(result, is(nullValue()));
+        Item[] ref = {};
+        assertThat(result, is(ref));
     }
 
     @Test
@@ -122,7 +123,8 @@ public class TrackerTest {
         tracker.add(test5);
         tracker.add(test6);
         Item[] result = tracker.findByName("NonExist");
-        assertThat(result, is(nullValue()));
+        Item[] ref = {};
+        assertThat(result, is(ref));
     }
 
     @Test
