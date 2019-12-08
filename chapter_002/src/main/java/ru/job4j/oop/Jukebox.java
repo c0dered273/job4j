@@ -21,7 +21,7 @@ public class Jukebox {
         }
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Jukebox jukebox = new Jukebox();
         jukebox.music(2);
         jukebox.music(1);

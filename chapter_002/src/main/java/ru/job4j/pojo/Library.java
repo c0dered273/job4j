@@ -19,7 +19,7 @@ public class Library {
         }
         System.out.println("Print only Clean Code");
         for (int index = 0; index < library.length; index++) {
-            if (library[index].getName().equals("Clean code") ) {
+            if (library[index].getName().equals("Clean code")) {
                 System.out.println(library[index].getName() + " - " + library[index].getPageCount() + " pages");
             }
         }
