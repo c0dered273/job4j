@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 public class TrackerStaticClassSingleton {
 
-    private static final Tracker tracker = new Tracker();
+    private static final Tracker TRACKER = new Tracker();
 
     private TrackerStaticClassSingleton() {
     }
@@ -17,26 +17,26 @@ public class TrackerStaticClassSingleton {
     }
 
     public Item add(Item item) {
-        return tracker.add(item);
+        return TRACKER.add(item);
     }
 
     public boolean replace(String id, Item item) {
-        return tracker.replace(id, item);
+        return TRACKER.replace(id, item);
     }
 
     public boolean delete(String id) {
-        return tracker.delete(id);
+        return TRACKER.delete(id);
     }
 
     public Item[] findAll() {
-        return tracker.findAll();
+        return TRACKER.findAll();
     }
 
     public Item[] findByName(String key) {
-        return tracker.findByName(key);
+        return TRACKER.findByName(key);
     }
 
     public Item findById(String id) {
-        return tracker.findById(id);
+        return TRACKER.findById(id);
     }
 }

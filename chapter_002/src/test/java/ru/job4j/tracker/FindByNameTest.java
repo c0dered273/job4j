@@ -21,7 +21,7 @@ public class FindByNameTest {
         tracker.add(item2);
         tracker.add(item3);
         FindByNameAction action = new FindByNameAction();
-        action.execute(new StubInput(new String[] {"Test"}),tracker);
+        action.execute(new StubInput(new String[] {"Test"}), tracker);
         String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
                 .add("ID: " + item1.getId() + "    " + "Name: " + item1.getName())
                 .add("ID: " + item3.getId() + "    " + "Name: " + item3.getName())
