@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.util.ArrayList;
+
 public class TrackerStaticClassSingleton {
 
     private static final Tracker TRACKER = new Tracker();
@@ -28,11 +30,11 @@ public class TrackerStaticClassSingleton {
         return TRACKER.delete(id);
     }
 
-    public Item[] findAll() {
+    public ArrayList<Item> findAll() {
         return TRACKER.findAll();
     }
 
-    public Item[] findByName(String key) {
+    public ArrayList<Item> findByName(String key) {
         return TRACKER.findByName(key);
     }
 

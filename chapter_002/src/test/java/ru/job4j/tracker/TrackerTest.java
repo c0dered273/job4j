@@ -2,6 +2,8 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
@@ -42,7 +44,7 @@ public class TrackerTest {
     @Test
     public void deleteItemTest() {
         Tracker tracker = new Tracker();
-        Item[] ref = new Item[6];
+        ArrayList<Item> ref = new ArrayList<>();
         Item delItem = new Item("delItem");
         Item test1 = new Item("Test1");
         Item test2 = new Item("Test2");
@@ -58,13 +60,13 @@ public class TrackerTest {
         tracker.add(test5);
         tracker.add(test6);
         tracker.delete(delItem.getId());
-        ref[0] = test1;
-        ref[1] = test2;
-        ref[2] = test3;
-        ref[3] = test4;
-        ref[4] = test5;
-        ref[5] = test6;
-        Item[] result = tracker.findAll();
+        ref.add(test1);
+        ref.add(test2);
+        ref.add(test3);
+        ref.add(test4);
+        ref.add(test5);
+        ref.add(test6);
+        ArrayList<Item> result = tracker.findAll();
         assertThat(result, is(ref));
     }
 
@@ -79,15 +81,15 @@ public class TrackerTest {
     @Test
     public void findAllWithEmptyArray() {
         Tracker tracker = new Tracker();
-        Item[] result = tracker.findAll();
-        Item[] ref = {};
+        ArrayList<Item> result = tracker.findAll();
+        ArrayList<Item> ref = new ArrayList<>();
         assertThat(result, is(ref));
     }
 
     @Test
     public void findByNameTest() {
         Tracker tracker = new Tracker();
-        Item[] ref = new Item[3];
+        ArrayList<Item> ref = new ArrayList<>();
         Item test1 = new Item("Test1");
         Item test2 = new Item("Test2");
         Item test3 = new Item("Test2");
@@ -100,10 +102,10 @@ public class TrackerTest {
         tracker.add(test4);
         tracker.add(test5);
         tracker.add(test6);
-        ref[0] = test2;
-        ref[1] = test3;
-        ref[2] = test6;
-        Item[] result = tracker.findByName("Test2");
+        ref.add(test2);
+        ref.add(test3);
+        ref.add(test6);
+        ArrayList<Item> result = tracker.findByName("Test2");
         assertThat(result, is(ref));
     }
 
@@ -122,8 +124,8 @@ public class TrackerTest {
         tracker.add(test4);
         tracker.add(test5);
         tracker.add(test6);
-        Item[] result = tracker.findByName("NonExist");
-        Item[] ref = {};
+        ArrayList<Item> result = tracker.findByName("NonExist");
+        ArrayList<Item> ref = new ArrayList<>();
         assertThat(result, is(ref));
     }
 

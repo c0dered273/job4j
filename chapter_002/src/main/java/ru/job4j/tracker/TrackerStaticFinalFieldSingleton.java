@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.util.ArrayList;
+
 public class TrackerStaticFinalFieldSingleton {
 
     private static final TrackerStaticFinalFieldSingleton INSTANCE
@@ -25,11 +27,11 @@ public class TrackerStaticFinalFieldSingleton {
         return TRACKER.delete(id);
     }
 
-    public Item[] findAll() {
+    public ArrayList<Item> findAll() {
         return TRACKER.findAll();
     }
 
-    public Item[] findByName(String key) {
+    public ArrayList<Item> findByName(String key) {
         return TRACKER.findByName(key);
     }
 
