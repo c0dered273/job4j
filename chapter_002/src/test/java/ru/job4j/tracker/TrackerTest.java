@@ -3,6 +3,7 @@ package ru.job4j.tracker;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
@@ -44,7 +45,7 @@ public class TrackerTest {
     @Test
     public void deleteItemTest() {
         Tracker tracker = new Tracker();
-        ArrayList<Item> ref = new ArrayList<>();
+        List<Item> ref = new ArrayList<>();
         Item delItem = new Item("delItem");
         Item test1 = new Item("Test1");
         Item test2 = new Item("Test2");
@@ -66,7 +67,7 @@ public class TrackerTest {
         ref.add(test4);
         ref.add(test5);
         ref.add(test6);
-        ArrayList<Item> result = tracker.findAll();
+        List<Item> result = tracker.findAll();
         assertThat(result, is(ref));
     }
 
@@ -81,15 +82,15 @@ public class TrackerTest {
     @Test
     public void findAllWithEmptyArray() {
         Tracker tracker = new Tracker();
-        ArrayList<Item> result = tracker.findAll();
-        ArrayList<Item> ref = new ArrayList<>();
+        List<Item> result = tracker.findAll();
+        List<Item> ref = new ArrayList<>();
         assertThat(result, is(ref));
     }
 
     @Test
     public void findByNameTest() {
         Tracker tracker = new Tracker();
-        ArrayList<Item> ref = new ArrayList<>();
+        List<Item> ref = new ArrayList<>();
         Item test1 = new Item("Test1");
         Item test2 = new Item("Test2");
         Item test3 = new Item("Test2");
@@ -105,7 +106,7 @@ public class TrackerTest {
         ref.add(test2);
         ref.add(test3);
         ref.add(test6);
-        ArrayList<Item> result = tracker.findByName("Test2");
+        List<Item> result = tracker.findByName("Test2");
         assertThat(result, is(ref));
     }
 
@@ -124,8 +125,8 @@ public class TrackerTest {
         tracker.add(test4);
         tracker.add(test5);
         tracker.add(test6);
-        ArrayList<Item> result = tracker.findByName("NonExist");
-        ArrayList<Item> ref = new ArrayList<>();
+        List<Item> result = tracker.findByName("NonExist");
+        List<Item> ref = new ArrayList<>();
         assertThat(result, is(ref));
     }
 
