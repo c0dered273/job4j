@@ -31,7 +31,9 @@ public class User implements Comparable<User> {
 
     @Override
     public int compareTo(@NotNull User o) {
-        if (this.equals(o)) return 0;
+        if (this.equals(o)) {
+            return 0;
+        }
         int result = this.name.compareTo(o.name);
         if (result == 0) {
             result = Integer.compare(this.age, o.age);
@@ -41,11 +43,15 @@ public class User implements Comparable<User> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         User user = (User) o;
-        return age == user.age &&
-                Objects.equals(name, user.name);
+        return age == user.age
+                && Objects.equals(name, user.name);
     }
 
     @Override
