@@ -11,11 +11,11 @@ public class StringCompare implements Comparator<String> {
         char[] ch2 = o2.toCharArray();
         int minLength = Math.min(ch1.length, ch2.length);
         for (int i = 0; i != minLength; i++) {
-            result = Character.compare(ch2[i], ch1[i]);
+            result = Character.compare(ch1[i], ch2[i]);
             if (result != 0) {
                 return result;
             }
         }
-        return  o2.length() - o1.length();
+        return  o1.length() - o2.length();
     }
 }
