@@ -59,10 +59,6 @@ public class BankService {
                 destBalance += amount;
                 srcAccount.setBalance(srcBalance);
                 destAccount.setBalance(destBalance);
-                int srcAccIndex = users.get(srcUser).indexOf(srcAccount);
-                int destAccIndex = users.get(destUser).indexOf(destAccount);
-                users.get(srcUser).set(srcAccIndex, srcAccount);
-                users.get(destUser).set(destAccIndex, destAccount);
                 rsl = true;
             }
         }
