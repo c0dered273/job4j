@@ -20,12 +20,8 @@ public class BankService {
 
     public User findByPassport(String passport) {
         Set<User> userSet = users.keySet();
-        for (User user : userSet) {
-            if (user.getPassport().equals(passport)) {
-                return user;
-            }
-        }
-        return null;
+        return userSet.stream().filter(e -> e.getPassport().equals(passport))
+                .findFirst().orElse(null);
     }
 
     public Account findByRequisite(String passport, String requisite) {
@@ -67,11 +63,7 @@ public class BankService {
 
     private Account findAccountByRequisite(User user, String requisite) {
         List<Account> accounts = users.get(user);
-        for (Account account : accounts) {
-            if (account.getRequisite().equals(requisite)) {
-                return account;
-            }
-        }
-        return null;
+        return accounts.stream().filter(e -> e.getRequisite().equals(requisite))
+                .findFirst().orElse(null);
     }
 }
