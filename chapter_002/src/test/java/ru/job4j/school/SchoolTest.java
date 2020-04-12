@@ -75,4 +75,15 @@ public class SchoolTest {
         Map<String, Student> result = School.toMapBySurname(students);
         assertThat(expect, is(result));
     }
+
+    @Test
+    public void whenScoreMoThen65() {
+        students.add(null);
+        List<Student> expect = new ArrayList<>();
+        expect.add(stud7);
+        expect.add(stud6);
+        expect.add(stud5);
+        List <Student> result = School.levelOf(students, 65);
+        assertThat(result, is(expect));
+    }
 }

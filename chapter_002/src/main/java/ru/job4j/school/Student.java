@@ -1,6 +1,8 @@
 package ru.job4j.school;
 
-public class Student {
+import org.jetbrains.annotations.NotNull;
+
+public class Student implements Comparable<Student>{
     private String name;
     private String surname;
     private int score;
@@ -33,5 +35,10 @@ public class Student {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    @Override
+    public int compareTo(@NotNull Student o) {
+        return Integer.compare(this.score, o.getScore());
     }
 }
